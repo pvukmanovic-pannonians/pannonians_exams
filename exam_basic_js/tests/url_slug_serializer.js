@@ -10,8 +10,8 @@
 //    {HYPERTEXT TRANSFER PROTOCOL SECURE SCHEME DECLARATION}{DOMAIN AND PORT}/{YEAR}/{MONTH}/{DAY}/{SLUG}
 //
 // Exam passing when:
-//    1. All the posts are printed properly (use console.log)
-//    2. isValidUrl function is passing for all the generated URLs
+//    1. All the valid posts are printed properly (use console.log)
+//    2. isValidUrl function is passing through filter all the generated URLs
 //
 /**!SECTION */
 
