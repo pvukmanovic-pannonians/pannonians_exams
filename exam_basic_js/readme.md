@@ -9,3 +9,6 @@ Your task is:
 During the exam, feel free to utalize your Google skills as well, no restrictions here. Please also timebox yourself for up to 15 minutes per task/file.
 
 Also please don't forget to share your screens and be mindful of other folks around you on meeting. Don't make loud noises, programmers are easily jump-scared.
+
+### P.S.
+Each of the tasks pretty much has at least one "gotcha" that's made on purpouse. Please don't submit PRs to "fix" code or something. :)
