@@ -25,7 +25,7 @@
 
 // function to generate 50/50 split
 const incomeProbability = () => {
-  return Math.random() < 0.3;
+  return Math.random() < 0.2;
 };
 
 // generate our random number
