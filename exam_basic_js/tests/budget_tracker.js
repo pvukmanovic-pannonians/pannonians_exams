@@ -14,8 +14,9 @@
 //    2. Ticket to Mars price is, on our current predictions, around 35000 cosmic credits.
 //       Please console.log us the result if you have enough savings to go to Mars or not.
 //       Please note that the data is dynamic, so you might go in some scenarios, some not.
-//       Now that we know that information, please tell us total savings (which is 20% of your
-//       monthly income) for your every month
+//       Now that we know that information, please tell us as well total savings (which is 20% of your
+//       monthly income) for your every month.
+//       To sum up: you will need at least 2 console.logs to finish this properly
 //
 /**!SECTION */
 
