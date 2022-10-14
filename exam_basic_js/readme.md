@@ -4,6 +4,7 @@ Your task is:
 1. Clone this repo locally
 2. Create a branch named: `exam-basic-js/<your name here>`
 3. Provide answers to the exams in the section "Work area"
+4. Please commit your branches and push when done
 
 During the exam, feel free to utalize your Google skills as well, no restrictions here. Please also timebox yourself for up to 15 minutes per task/file.
 
