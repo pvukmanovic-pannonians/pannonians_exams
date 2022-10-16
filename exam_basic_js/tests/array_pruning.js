@@ -68,6 +68,11 @@ const users = [
 
 /** SECTION:  Work area */
 
-// Your answer here. Delete this comment.
+const filteredEmails = users
+  .filter((val) => {if ( val.plan.activeSubscriptions) { return val.plan.activeSubscriptions.includes(SUBSCRIPTION_TIERS.PREMIUM, 0)}})
+  .map(function (val) {
+    return val.name;
+  });
+console.log(filteredEmails);
 
 /** !SECTION */
