@@ -67,6 +67,15 @@ const isValidUrl = (urlString) => {
 
 /** SECTION:  Work area */
 
-// Your answer here. Delete this comment.
+let year = new Date().getFullYear()
+let month = new Date().getMonth()
+let day = new Date().getDay()
+
+const urlSlug = posts.map((post) => 'https://' + 'www.join-the-javascript.club' + ':6397' + '/' +
+  year + '/' + month + '/' + day + '/' + post.title.replace(/[^A-Za-z0-9]/ig, ""))
+console.log("URLs: ", urlSlug)
+
+const validationURL = urlSlug.map((url) => isValidUrl(url))
+console.log("URL validations: ", validationURL)
 
 /** !SECTION */

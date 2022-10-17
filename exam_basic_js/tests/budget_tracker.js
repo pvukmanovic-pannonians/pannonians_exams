@@ -91,6 +91,24 @@ const expanses = [
 
 /** SECTION:  Work area */
 
-// Your answer here. Delete this comment.
+const mapAmount = expanses.map((month) => month.transactions)
+console.log("Month income/outcome: ", mapAmount)
+const sumArrays = mapAmount.map((array) => array.reduce((accumulator, value) =>  {
+  if (value.income === true) {
+    return accumulator + value.amount;
+  }
+  return accumulator;
+},0))
+const sumMonths = sumArrays.reduce((accumulator, value) => accumulator + value, 0)
+console.log("The income of 3 months: ", sumMonths)
+
+const trueFalse = () => {
+  if (sumMonths >= ticketPrice) {
+    return true
+  } else {
+    return false
+  }
+}
+console.log("Do you have enough savings to go to Mars: ", trueFalse())
 
 /** !SECTION */
