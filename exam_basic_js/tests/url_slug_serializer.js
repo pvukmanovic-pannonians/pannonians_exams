@@ -53,11 +53,11 @@ const posts = [
 const isValidUrl = (urlString) => {
   var urlPattern = new RegExp(
     "^(https?:\\/\\/)?" + // validate protocol
-      "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // validate domain name
-      "((\\d{1,3}\\.){3}\\d{1,3}))" + // validate OR ip (v4) address
-      "(\\:\\d+)?(\\/[-a-z\\d%.~+]*)*" + // validate port and path
-      "(\\?[;&a-z\\d%_.~+=-]*)?" + // validate query string
-      "(\\#[-a-z\\d_]*)?$",
+    "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // validate domain name
+    "((\\d{1,3}\\.){3}\\d{1,3}))" + // validate OR ip (v4) address
+    "(\\:\\d+)?(\\/[-a-z\\d%.~+]*)*" + // validate port and path
+    "(\\?[;&a-z\\d%_.~+=-]*)?" + // validate query string
+    "(\\#[-a-z\\d_]*)?$",
     "i"
   ); // validate fragment locator
   return !!urlPattern.test(urlString);
@@ -67,12 +67,9 @@ const isValidUrl = (urlString) => {
 
 /** SECTION:  Work area */
 
-let year = new Date().getFullYear()
-let month = new Date().getMonth()
-let day = new Date().getDay()
-
 const urlSlug = posts.map((post) => 'https://' + 'www.join-the-javascript.club' + ':6397' + '/' +
-  year + '/' + month + '/' + day + '/' + post.title.replace(/[^A-Za-z0-9]/ig, ""))
+  post.created_at + '/' + post.title.replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s/g, '-').toLowerCase())
+
 console.log("URLs: ", urlSlug)
 
 const validationURL = urlSlug.map((url) => isValidUrl(url))
