@@ -70,7 +70,7 @@ var moment = require('moment'); // require
 moment().format(); 
 
 const urlSlug = posts.map((post) => 'https://' + 'www.join-the-javascript.club' + ':6397' + '/' +
-moment.parseZone(post.created_at).format('YYYY/MM/DD') + '/' + post.title.replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s/g, '-').toLowerCase())
+moment(new Date(post.created_at * 1000)).format("YYYY/MM/DD") + '/' + post.title.replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s/g, '-').toLowerCase())
 
 console.log("URLs: ", urlSlug)
 
