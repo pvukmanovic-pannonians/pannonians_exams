@@ -43,13 +43,13 @@ function randomNumberIncome() {
   return parseInt(
     (Math.random() * (income.max - income.min) + income.min).toFixed(0)
   );
-} 
+}
 
 function randomNumberExpense() {
   return parseInt(
     (Math.random() * (expense.max - expense.min) + expense.min).toFixed(0)
   );
-} 
+}
 
 const generateTransaction = () => {
   const income = incomeProbability();
@@ -94,23 +94,24 @@ const expanses = [
 //1. Based on the income of 3 months period given in the Task data area,
 //       calculate how much of savings you should have.
 
-const totalSavings = expanses.map(function(item) {return item.transactions.
-  filter(smt => smt.income == true)}).reduce(function (a, b) {
+const totalIncome = expanses
+  .map(function (item) {
+    return item.transactions.filter((smt) => smt.income == true);
+  })
+  .reduce(function (a, b) {
     b.forEach(function (c) {
-      a += c.amount
+      a += c.amount;
     });
-    return a
-  }, 0)
+    return a;
+  }, 0);
 
-console.log('I saved', totalSavings);
+const totalSavings = Math.round((totalIncome * 20) / 100);
+console.log("I saved", totalSavings);
 
-if (totalSavings>= 35000) {
-  console.log('Idemo na Mars, Idemo na Mars')
+if (totalSavings >= 35000) {
+  console.log("Idemo na Mars, Idemo na Mars");
 } else {
-  console.log('Idemo na Livadu, Idemo na Livadu')
-};
-
-
-
+  console.log("Idemo na Livadu, Idemo na Livadu");
+}
 
 /** !SECTION */
