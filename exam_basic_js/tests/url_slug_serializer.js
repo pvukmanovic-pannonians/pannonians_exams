@@ -67,6 +67,24 @@ const isValidUrl = (urlString) => {
 
 /** SECTION:  Work area */
 
-// Your answer here. Delete this comment.
+const buildUrl = posts.map(
+  (url) =>
+    "https://" +
+    "www.join-the-javascript.club" +
+    ":6379" +
+    "/" +
+    new Date(url.created_at * 1000).getUTCFullYear() +
+    "/" +
+    (new Date(url.created_at * 1000).getUTCMonth()+1) +
+    "/" +
+    new Date(url.created_at * 1000).getUTCDate() +
+    "/" +
+    url.title.toLowerCase().replace(/ /g, "-").replace(/[?=]/g, "")
+);
+
+console.log(buildUrl);
+
+const validateUrl = buildUrl.map((valid) => isValidUrl(valid));
+console.log("validate url", validateUrl);
 
 /** !SECTION */
