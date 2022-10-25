@@ -68,7 +68,7 @@ const users = [
 
 /** SECTION:  Work area */
 
-const premiumUsers = user.filter(user => user.plan.activeSubscriptions.includes(SUBSCRIPTION_TIERS.PREMIUM));
+const premiumUsers = users.filter(user => user.plan.activeSubscriptions?.includes(SUBSCRIPTION_TIERS.PREMIUM));
 const requestedEmails = premiumUsers.map(user => user.name);
 console.log (requestedEmails);
 
