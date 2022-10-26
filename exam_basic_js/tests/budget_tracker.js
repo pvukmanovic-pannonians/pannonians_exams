@@ -101,14 +101,15 @@ const savingPerMonth = incomeAmountPerMonth.map(array => array.reduce((acc, val)
   return acc;
 },0));
 
-console.log('Firts month saving is:', savingPerMonth[0]);
-console.log('Second month saving is:', savingPerMonth[1]);
-console.log('Third month saving is:', savingPerMonth[2]);
+console.log('Firts month saving is:', Math.round(savingPerMonth[0] * 0.2));
+console.log('Second month saving is:', Math.round(savingPerMonth[1] * 0.2));
+console.log('Third month saving is:', Math.round(savingPerMonth[2] * 0.2));
 
-const savingsForThreeMonths = savingPerMonth.reduce (
+const savingsForThreeMonthsAll = savingPerMonth.reduce (
   (prevVal, currVal) => prevVal + currVal, 
 );
-console.log('All savings for three months is:',savingsForThreeMonths);
+const savingsForThreeMonths = Math.round(savingsForThreeMonthsAll * 0.2);
+console.log('All savings for three months is:', savingsForThreeMonths);
 
 function marsOrNot() {if (savingsForThreeMonths >= 35000) {
   return console.log('We have enough savings for a ticket to Mars.')
