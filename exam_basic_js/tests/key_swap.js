@@ -19,7 +19,7 @@ const taskData = {
   the: "quick",
   brown: "fox",
   jumps: "over",
-  the: "lazy dog",
+  ["the lazy"]: "dog",
 };
 
 /**!SECTION */
