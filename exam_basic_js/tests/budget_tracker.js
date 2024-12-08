@@ -57,7 +57,7 @@ const generateTransaction = () => {
     income: income,
     amount: income ? randomNumberIncome() : randomNumberExpense(),
   };
-};
+}
 
 const calculateTransactions = () => {
   return [
@@ -91,6 +91,31 @@ const expanses = [
 
 /** SECTION:  Work area */
 
-// Your answer here. Delete this comment.
+const incomeAmountPerMonth = expanses.map(month => month.transactions);
+//console.log(incomeAmountPerMonth);
+
+const savingPerMonth = incomeAmountPerMonth.map(array => array.reduce((acc, val) => {
+  if (val.income === true) {
+    return acc + val.amount;
+  }
+  return acc;
+},0));
+
+console.log('Firts month saving is:', Math.round(savingPerMonth[0] * 0.2));
+console.log('Second month saving is:', Math.round(savingPerMonth[1] * 0.2));
+console.log('Third month saving is:', Math.round(savingPerMonth[2] * 0.2));
+
+const savingsForThreeMonthsAll = savingPerMonth.reduce (
+  (prevVal, currVal) => prevVal + currVal, 
+);
+const savingsForThreeMonths = Math.round(savingsForThreeMonthsAll * 0.2);
+console.log('All savings for three months is:', savingsForThreeMonths);
+
+function marsOrNot() {if (savingsForThreeMonths >= 35000) {
+  return console.log('We have enough savings for a ticket to Mars.')
+} else {
+  console.log("We don't have enough savings for a ticket to Mars.")
+}};
+marsOrNot();
 
 /** !SECTION */

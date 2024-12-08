@@ -57,9 +57,7 @@ const isValidUrl = (urlString) => {
       "((\\d{1,3}\\.){3}\\d{1,3}))" + // validate OR ip (v4) address
       "(\\:\\d+)?(\\/[-a-z\\d%.~+]*)*" + // validate port and path
       "(\\?[;&a-z\\d%_.~+=-]*)?" + // validate query string
-      "(\\#[-a-z\\d_]*)?$",
-    "i"
-  ); // validate fragment locator
+      "(\\#[-a-z\\d_]*)?$",); // validate fragment locator
   return !!urlPattern.test(urlString);
 };
 
@@ -67,6 +65,17 @@ const isValidUrl = (urlString) => {
 
 /** SECTION:  Work area */
 
-// Your answer here. Delete this comment.
+const url = posts.map ( post => 
+  "https://" +
+  "www.join-the-javascript.club:6379" + "/" +
+  new Date(post.created_at * 1000).getFullYear() + "/" +
+  (new Date(post.created_at * 1000).getMonth()+1) + "/" +
+  new Date(post.created_at * 1000).getDate() + "/" +
+  post.title.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').replace(/ /g, "-")
+);
+console.log(url);
+
+const validateUrl = url.map(url => isValidUrl(url));
+console.log("URL is validated:", validateUrl);
 
 /** !SECTION */

@@ -68,6 +68,8 @@ const users = [
 
 /** SECTION:  Work area */
 
-// Your answer here. Delete this comment.
+const premiumUsers = users.filter(user => user.plan.activeSubscriptions?.includes(SUBSCRIPTION_TIERS.PREMIUM));
+const requestedEmails = premiumUsers.map(user => user.name);
+console.log (requestedEmails);
 
 /** !SECTION */
